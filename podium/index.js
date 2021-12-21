@@ -15,9 +15,9 @@ app.get(layout.pathname(), async (req, res, next) => {
   const [a] = await Promise.all([
     podletA.fetch(incoming),
   ]);
+  incoming.podlets = [a];
   res.podiumSend(`
         <section>${a.content}</section>
     `);
 });
 app.listen(7000);
-console.log('listening on port 7000')

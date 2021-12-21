@@ -1,10 +1,10 @@
 <template>
   <div>
-    <button @click="test">test</button>
     data from api:
     <pre>
       {{ mountains }}
     </pre>
+    <button @click="test">test</button>
   </div>
 </template>
 

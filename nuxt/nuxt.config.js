@@ -29,6 +29,18 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    [
+      'nuxt-podium-module',
+      {
+        podletOptions: {
+          name: 'myPodletName', // required
+          version: `1.0.0`, // required
+          pathname: '/', // required
+          manifest: '/manifest.json', // optional
+          development: false // optional, defaults to false
+        }
+      }
+    ]
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
