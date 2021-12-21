@@ -1,6 +1,6 @@
 <template>
   <div>
-    test - {{ response }}
+    test - {{ mountains }}
   </div>
 </template>
 
@@ -10,28 +10,16 @@ import axios from 'axios';
 export default {
   name: 'IndexPage',
 
-  data() {
-    return {
-      response: '',
+    data() {
+      return {
+        mountains: []
+      }
+    },
+
+  async fetch() {
+      this.mountains = await fetch(
+        'https://api.nuxtjs.dev/mountains'
+      ).then(res => res.json())
     }
-  },
-
-  created() {
-    console.log('created');
-
-    axios.get('https://jsonplaceholder.typicode.com/todos/1')
-      .then(data => {
-        console.log(data);
-
-        this.response = data;
-      })
-      .catch(e => {
-        console.log(e);
-      })
-      .finally(() => {
-        console.log('finished');
-      })
-
-  }
 }
 </script>
