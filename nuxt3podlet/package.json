@@ -6,6 +6,7 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
+    "nuxt-podium-module": "^0.0.7",
     "nuxt3": "latest"
   }
 }

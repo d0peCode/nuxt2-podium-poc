@@ -91,3 +91,7 @@ sw.*
 
 # Vim swap files
 *.swp
+
+.output
+nuxt3podlet/.output
+nuxt3podlet/node_modules
