@@ -11,18 +11,25 @@ const podletA = layout.client.register({
   uri: 'http://localhost:3000/manifest.json',
 });
 
+const podletB = layout.client.register({
+  name: 'myPodletb',
+  uri: 'http://localhost:3001/manifest.json',
+});
+
 const app = express();
 
 app.use(layout.middleware());
 
 app.get(layout.pathname(), async (req, res, next) => {
   const incoming = res.locals.podium;
-  const [a] = await Promise.all([
+  const [a, b] = await Promise.all([
     podletA.fetch(incoming),
+    podletB.fetch(incoming),
   ]);
-  incoming.podlets = [a];
+  incoming.podlets = [a, b];
   res.podiumSend(`
         <section>${a.content}</section>
+        <section>${b.content}</section>
     `);
 });
 
