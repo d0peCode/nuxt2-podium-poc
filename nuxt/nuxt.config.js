@@ -16,6 +16,8 @@ export default {
     ]
   },
 
+  globalName: 'nuxtPOC',
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
