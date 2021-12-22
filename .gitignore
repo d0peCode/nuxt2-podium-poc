@@ -37,6 +37,7 @@ build/Release
 # Dependency directories
 nuxt/node_modules/
 nuxt2/node_modules/
+nuxt3podlet/node_modules/
 podium/node_modules/
 jspm_packages/
 
